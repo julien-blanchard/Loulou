@@ -1,0 +1,40 @@
+[main]
+url = "https://blanchardjulien.com"
+title = "Julien's Data Blog"
+subtitle = "All things data | Programming"
+author = "Julien Blanchard"
+profilePicture = "juju.jpeg"
+
+[custom]
+numRecentArticles = 8
+hasFeaturedArticles = true
+numFeaturedArticles = 4
+featureSummaryLength = 20
+theme = "solar"
+font = "Space Mono"
+syntaxHighlighter = "pojoaque tokyo-night-dark panda-syntax-dark"
+
+[routes]
+posts = "Articles"
+about = "About"
+
+[social]
+gitHub = "https://github.com/julien-blanchard/"
+linkedIn = "https://www.linkedin.com/in/julien-blanchard-4b539038/"
+
+[css]
+bulmaMain = ""
+bulmaWatch = ""
+fontAwesome = ""
+googleFont = ""
+syntaxHighlighter = ""
+customCSS = "style.css"
+
+[javascript]
+syntaxHighlighter = ""
+customJS = "script.js"
+
+[analytics]
+googleAnalytics = false
+umami = ""
+counterDotDev = ""
