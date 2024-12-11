@@ -1,0 +1,11 @@
+body {
+    font-family: "Space Mono", serif;
+}
+.clickable-content {
+    cursor: pointer;
+}
+#adjust-centre {
+    text-align: center;
+    margin-left: auto;
+    justify-content: flex-end;
+}
