@@ -48,7 +48,7 @@ def createPosts() -> None:
     list_of_posts: List[str] = getListOfPosts(POSTS_DIR)
     createPostsJSON(list_of_posts,DATA_DIR)
 
-def createNavigation():
+def createNavigation() -> None:
     createAbout(DATA_DIR,TEMPLATES_DIR,OUTPUT_DIR)
     createExtras(DATA_DIR,TEMPLATES_DIR,OUTPUT_DIR)
 
