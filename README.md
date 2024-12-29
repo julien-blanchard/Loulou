@@ -25,7 +25,7 @@ Once this done, simply:
 2.  Add the following header to your *markdown* articles and place them into the `posts` directory:
 
 ```
----
+-----
 {
 "title":"",
 "date":"",
@@ -34,7 +34,7 @@ Once this done, simply:
 "featured":false,
 "readTime":""
 }
----
+-----
 
 Start writing your article here!
 ```
