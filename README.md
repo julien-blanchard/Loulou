@@ -41,10 +41,12 @@ Start writing your article here!
 
 3.  Name your *markdown* articles as follows: `YYMMDD_name_of_the_article.md`
 
-Now run the `main.py` file and you'll see two new directories at the root of your project:
+Before you run the `main.py` file, you'll need two new directories at the root of your project:
 
 *  `data`
-*  `build` (this is your website!)
+*  `build` (this is where your website will magically appear!)
+
+`mkdir build data`
 
 # Customising Loulou
 
