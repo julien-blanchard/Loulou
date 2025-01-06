@@ -12,7 +12,7 @@ def createPost(post_path: str, templates: List[str], output_dir: str, attributes
         mistune
         .html(post_no_header)
         .replace('<a href=','<a class="has-text-danger" href=')
-        .replace('<img src="','<img src="https://blanchardjulien.com')
+        .replace('<img src="','<img class="images-centre" src="https://blanchardjulien.com')
         .replace("<yt>",'<iframe width="90%" height="430" src="https://www.youtube.com/embed/')
         .replace("</yt>",'" frameborder="0" allowfullscreen></iframe>')
     )
