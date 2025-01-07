@@ -11,7 +11,7 @@ def getListOfPosts(path_to_files: str) -> List[str]:
     result.reverse()
     return result
 
-def createPostsJSON(list_of_posts: List[str], path_to_json: str):
+def createPostsJSON(list_of_posts: List[str], path_to_json: str) -> Dict:
     temp_container: List[str] = []
     for posts in list_of_posts:
         with open(posts, "r", encoding="utf8") as post_file:

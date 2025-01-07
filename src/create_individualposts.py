@@ -3,7 +3,7 @@ import os
 from typing import List, Dict, Any
 import mistune
     
-def createPost(post_path: str, templates: List[str], output_dir: str, attributes: List[str]):
+def createPost(post_path: str, templates: List[str], output_dir: str, attributes: List[str]) -> None:
     with open(post_path,"r") as temp_file:
         temp_post: str = temp_file.read()
     

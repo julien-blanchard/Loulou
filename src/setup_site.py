@@ -3,7 +3,7 @@ import shutil
 import json
 from typing import List, Dict, Any
 
-def getConfigFile(file_to_open: str):
+def getConfigFile(file_to_open: str) -> Dict:
     with open(file_to_open, "rb") as config_file:
         config = json.load(config_file)
     return config
