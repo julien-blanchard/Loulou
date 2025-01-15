@@ -17,7 +17,7 @@ Loulou relies on the following *css* and *javascript* libraries:
 
 # How to run Loulou?
 
-You'll need to have the *python* language installed on your device, as well as the [mistune](https://mistune.lepture.com/en/latest/) library.
+You'll need to have the *python* language installed on your device (*version 3.6 and above*), as well as the [mistune](https://mistune.lepture.com/en/latest/) library.
 
 Once this done, simply:
 
