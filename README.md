@@ -46,7 +46,7 @@ Before you run the `main.py` file, you'll need two new directories at the root o
 *  `data`
 *  `build` (this is where your website will magically appear!)
 
-`mkdir build data`
+To do do, just type in `mkdir build data` in your command line tool.
 
 # Customising Loulou
 
