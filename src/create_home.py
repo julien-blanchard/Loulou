@@ -8,7 +8,7 @@ def createLatestArticles(json_file: Dict, num_of_articles: int, url: str) -> str
       post_title: str = json_file[posts]["title"].title()
       post_path: str = f"{url}/posts/{posts.split(".")[0]}.html"
       post_date: str = json_file[posts]["date"]
-      html_list = f'<li><span class="tag">{post_date}</span> &emsp;<a class="has-text-danger" href="{post_path}">{post_title}</a></li>'
+      html_list: str = f'<li><span class="tag">{post_date}</span> &emsp;<a class="has-text-danger" href="{post_path}">{post_title}</a></li>'
       temp_container.append(html_list)
     result: str = "\n".join(temp_container[:num_of_articles])
     return result
@@ -64,7 +64,7 @@ def createIndex(html_template: str,template_folder: str,target_folder: str,lates
 def createHome(json_path: str, num_of_articles: int, url: str, html_template: str,template_folder: str,target_folder: str) -> None:
     with open(json_path,"r") as file_json:
         json_as_string: str = file_json.read()
-        json_posts = json.loads(json_as_string)
+        json_posts: Dict = json.loads(json_as_string)
 
     latest_articles: str = createLatestArticles(json_posts,num_of_articles,url)
     featured_articles: str = getFeaturedArticles(json_posts,url)
