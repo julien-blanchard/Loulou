@@ -41,7 +41,7 @@ def createIndividualPosts(json_path: str, html_template: str,template_folder: st
 
     with open(json_path,"r") as file_json:
         json_as_string: str = file_json.read()
-        json_posts = json.loads(json_as_string)
+        json_posts: Dict = json.loads(json_as_string)
 
     for posts in json_posts:
         post_title: str = json_posts[posts]["title"].title()
