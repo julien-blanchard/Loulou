@@ -67,7 +67,7 @@ def createPostsIndex(html_template: str,template_folder: str,target_folder: str,
 def createPostsPage(json_path: str, num_of_tags: int, url: str, html_template: str,template_folder: str,target_folder: str) -> None:
     with open(json_path,"r",encoding="utf8") as file_json:
         json_as_string: str = file_json.read()
-        json_posts = json.loads(json_as_string)
+        json_posts: Dict = json.loads(json_as_string)
     
     top_tags: str = createTopTags(json_posts, num_of_tags, url)
     posts_list: str = createPostsList(json_posts, url)
