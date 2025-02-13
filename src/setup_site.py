@@ -5,7 +5,7 @@ from typing import List, Dict, Any
 
 def getConfigFile(file_to_open: str) -> Dict:
     with open(file_to_open, "rb") as config_file:
-        config = json.load(config_file)
+        config: Dict = json.load(config_file)
     return config
 
 def createDataFolder(path_to_folder: str) -> None:
