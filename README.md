@@ -58,16 +58,16 @@ Examples:
 
 *  *Solar* (default theme)
 
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/solar_loulou.png "Image")
+![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/solar_loulou.png "Image")
 
 *  *Slate*
 
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/slate_loulou.png "Image")
+![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/slate_loulou.png "Image")
 
 *  *Journal*
 
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/journal_loulou.png "Image")
+![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/journal_loulou.png "Image")
 
 *  *Nuclear*
 
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/nuclear_loulou.png "Image")
+![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/nuclear_loulou.png "Image")
