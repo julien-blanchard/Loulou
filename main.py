@@ -45,27 +45,77 @@ json_file: str = os.path.join(DATA_DIR,"posts.json")
 def setupSite() -> None:
     createDataFolder(DATA_DIR)
     clearOutputFolder(OUTPUT_DIR)
-    createOutputFolders(OUTPUT_DIR,OUTPUT_FOLDERS)
-    createMainTemplate(ROOT_DIR,DATA_DIR,f'{config_file["main"]["author"]} {NOW[:4]}')
-    moveToOutputFolders(ROOT_DIR,OUTPUT_DIR,"css")
-    moveToOutputFolders(ROOT_DIR,OUTPUT_DIR,"javascript")
-    moveToOutputFolders(ROOT_DIR,OUTPUT_DIR,"images")
+    createOutputFolders(
+        OUTPUT_DIR,
+        OUTPUT_FOLDERS
+    )
+    createMainTemplate(
+        ROOT_DIR,DATA_DIR,
+        f'{config_file["main"]["author"]} {NOW[:4]}'
+    )
+    moveToOutputFolders(
+        ROOT_DIR,
+        OUTPUT_DIR,
+        "css"
+    )
+    moveToOutputFolders(
+        ROOT_DIR,
+        OUTPUT_DIR,
+        "javascript"
+    )
+    moveToOutputFolders(
+        ROOT_DIR,
+        OUTPUT_DIR,
+        "images"
+    )
 
 def createJSON() -> None:
     list_of_posts: List[str] = getListOfPosts(POSTS_DIR)
-    createPostsJSON(list_of_posts,DATA_DIR)
+    createPostsJSON(
+        list_of_posts,
+        DATA_DIR
+    )
 
 def createNavigation() -> None:
-    createAbout(DATA_DIR,TEMPLATES_DIR,OUTPUT_DIR)
-    createExtras(DATA_DIR,TEMPLATES_DIR,OUTPUT_DIR)
-    createHome(json_file,7,URL,DATA_DIR,TEMPLATES_DIR,OUTPUT_DIR)
-    createPostsPage(json_file,7,URL,DATA_DIR,TEMPLATES_DIR,OUTPUT_DIR)
+    createAbout(
+        DATA_DIR,
+        TEMPLATES_DIR,
+        OUTPUT_DIR
+    )
+    createExtras(
+        DATA_DIR,
+        TEMPLATES_DIR,
+        OUTPUT_DIR
+    )
+    createHome(
+        json_file,
+        7,
+        URL,
+        DATA_DIR,
+        TEMPLATES_DIR,
+        OUTPUT_DIR
+    )
+    createPostsPage(
+        json_file,
+        7,
+        URL,
+        DATA_DIR,
+        TEMPLATES_DIR,
+        OUTPUT_DIR
+    )
 
 def createContent() -> None:
-    createIndividualPosts(json_file,DATA_DIR,TEMPLATES_DIR,POSTS_DIR,OUTPUT_DIR)
+    createIndividualPosts(
+        json_file,
+        DATA_DIR,
+        TEMPLATES_DIR,
+        POSTS_DIR,
+        OUTPUT_DIR
+    )
 
 if __name__ == "__main__":
     setupSite()
     createJSON()
     createNavigation()
+
     createContent()
