@@ -48,6 +48,14 @@ Before you run the `main.py` file, you'll need two new directories at the root o
 
 To do so, just type in `mkdir build data` in your command line tool.
 
+# Special features
+
+* **YouTube** videos:
+
+To embed a **YouTube** video into one of your posts, wrap the video's ID between the following tags: `<yt></yt>`. You must write these tags directly into your *markdown* file(s). Example:
+
+`<yt>O9upVbGSBFo</yt>`
+
 # Customising Loulou
 
 Because Loulou uses [Bulmaswatch](https://jenil.github.io/bulmaswatch/), you can very easily change the colour scheme of your website.
