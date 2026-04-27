@@ -6,7 +6,7 @@ def createLatestArticles(json_file: Dict, num_of_articles: int, url: str) -> str
     temp_container: List[str] = []
     for posts in json_file: 
       post_title: str = json_file[posts]["title"].title()
-      post_path: str = f"{url}/posts/{posts.split(".")[0]}.html"
+      post_path: str = f"{url}/posts/{posts.split('.')[0]}.html"
       post_date: str = json_file[posts]["date"]
       html_list: str = f'<li><span class="tag">{post_date}</span> &emsp;<a class="has-text-danger" href="{post_path}">{post_title}</a></li>'
       temp_container.append(html_list)
@@ -18,7 +18,7 @@ def getFeaturedArticles(json_file: Dict, url: str) -> str:
     for posts in json_file:
       if json_file[posts]["featured"] is True:
         post_title: str = json_file[posts]["title"].title()
-        post_path: str = f"{url}/posts/{posts.split(".")[0]}.html"
+        post_path: str = f"{url}/posts/{posts.split('.')[0]}.html"
         post_summary: str = json_file[posts]["summary"]
         html_cell: str = f"""
         <div class="cell">
