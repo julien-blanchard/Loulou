@@ -1,13 +1,10 @@
-![Project status](https://img.shields.io/badge/version-1.0-green)
-![Python version](https://img.shields.io/badge/requires-python_3.6-blue)
+#**Loulou**
 
-# :love_letter: **Loulou** :love_letter:
+Loulou is a simple static site generator originally written by Julien Blanchard for his personal website [blanchardjulien.com](https://blanchardjulien.com/). I am gratefully using it to create my portfolio website.
 
-Loulou is a simple static site generator written in **Python**. It was primarily designed to build my personal website, [blanchardjulien.com](https://blanchardjulien.com/). But you are more than welcome to use it to create your own website.
+Loulou uses the [Mistune](https://github.com/lepture/mistune) library to convert articles written in Markdown into static HTML pages.
 
-# How does Loulou work?
-
-Loulou relies on the following *css* and *javascript* libraries:
+Loulou also relies on the following *css* and *javascript* libraries:
 
 *  [Bulma](https://bulma.io/)
 *  [Bulmaswatch](https://jenil.github.io/bulmaswatch/)
@@ -15,67 +12,4 @@ Loulou relies on the following *css* and *javascript* libraries:
 *  [Highlight.js](https://highlightjs.org/)
 *  [Google's Space Mono font](https://fonts.google.com/)
 
-# How to run Loulou?
-
-You'll need to have the *python* language installed on your device (*version 3.6 and above*), as well as the [mistune](https://mistune.lepture.com/en/latest/) library.
-
-Once this done, simply:
-
-1.  Modify the `template_main.html` file that you'll find in the `templates` directory
-2.  Add the following header to your *markdown* articles and place them into the `posts` directory:
-
-```
------
-{
-"title":"",
-"date":"",
-"summary":"",
-"tags":["",""],
-"featured":false,
-"readTime":""
-}
------
-
-Start writing your article here!
-```
-
-3.  Name your *markdown* articles as follows: `YYMMDD_name_of_the_article.md`
-
-Before you run the `main.py` file, you'll need two new directories at the root of your project:
-
-*  `data`
-*  `build` (this is where your website will magically appear!)
-
-To do so, just type in `mkdir build data` in your command line tool.
-
-# Special features
-
-* **YouTube** videos:
-
-To embed a **YouTube** video into one of your posts, wrap the video's ID between the following tags: `<yt></yt>`. You must write these tags directly into your *markdown* file(s). Example:
-
-`<yt>O9upVbGSBFo</yt>`
-
-# Customising Loulou
-
-Because Loulou uses [Bulmaswatch](https://jenil.github.io/bulmaswatch/), you can very easily change the colour scheme of your website.
-
-Pick any theme you like from the **Bulmaswatch** website, download the corresponding *css* file and place it in the `css` folder. Don't forget to modify your `template_main.html` file accordingly.
-
-Examples:
-
-*  *Solar* (default theme)
-
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/solar_loulou.png "Image")
-
-*  *Slate*
-
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/slate_loulou.png "Image")
-
-*  *Journal*
-
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/journal_loulou.png "Image")
-
-*  *Nuclear*
-
-![alt text](https://github.com/julien-blanchard/Loulou/blob/main/showcase/nuclear_loulou.png "Image")
+> More details and documentation at the upstream repository: [Loulou](https://github.com/julien-blanchard/Loulou)
