@@ -25,18 +25,41 @@
     },
     "css": [
         "bulma.min.css",
-        "bulmaswatch.min.css",
-        "fontawesome.min.css",
-        "spacemono.css",
-        "highlight.min.css",
+        "solar_bulmaswatch.min.css",
+        "highlight_tokyonightdark.css",
+        "fonts.css",
         "style.css"
     ],
-    "javascript": [
-        "highlight.min.js",
-        "customJS"
-    ],
-    "analytics": [
-        "umami",
-        "counter"
+    "js": [
+        {
+            "url": "https://kit.fontawesome.com/35ee8b8fd7.js",
+            "options": { 
+                "crossorigin": "anonymous"
+            }
+        },
+        {
+            "url": "https://blanchardjulien.com/javascript/highlight.min.js",
+            "options": {}
+        },
+        {
+            "url": "https://cloud.umami.is/script.js",
+            "options":
+            {
+                "data-website-id": "8c8334c9-9aff-41a9-a7f8-402d01529b18",
+                "defer": true
+            }
+        },
+        {
+            "url": "https://cdn.counter.dev/script.js",
+            "options":
+            {
+                "data-id": "205ad799-38b0-4d9a-ac65-2fdf615ff871",
+                "data-utcoffset": "0" 
+            }
+        },
+        {
+            "url": "https://blanchardjulien.com/javascript/script.js",
+            "options": {}
+        }
     ]
 }

@@ -9,3 +9,14 @@ body {
     margin-left: auto;
     justify-content: flex-end;
 }
+.content pre {
+    white-space: pre-wrap;
+    /* background-color: #2A2C2D; panda */
+    /* background-color: #161712; pojoaque */
+    background-color: #1A1B26;
+}
+.images-centre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

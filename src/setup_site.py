@@ -2,18 +2,19 @@ import os
 import shutil
 import json
 from typing import List, Dict, Any
+from datetime import datetime
 
 def getConfigFile(file_to_open: str) -> Dict:
     with open(file_to_open, "rb") as config_file:
         config: Dict = json.load(config_file)
     return config
 
-def createFolders(path_to_build_folder: str, path_to_data_folder: str, current_date: str) -> None:
+def createFolders(path_to_build_folder: str, path_to_data_folder: str) -> None:
     if not os.path.exists(path_to_build_folder):
         os.mkdir(path_to_build_folder)
     if not os.path.exists(path_to_data_folder):
         os.mkdir(path_to_data_folder)
-    path_to_current_folder = os.path.join(path_to_data_folder,current_date)
+    path_to_current_folder = os.path.join(path_to_data_folder,datetime.now().strftime("%Y%m%d"))
     if not os.path.exists(path_to_current_folder):
         os.mkdir(path_to_current_folder)
 
@@ -33,18 +34,6 @@ def createOutputFolders(path_to_folder: str, subfolder_names: List[str]) -> None
         subfolder = os.path.join(path_to_folder,subfolders)
         if not os.path.exists(subfolder):
             os.mkdir(subfolder)
-
-def createMainTemplate(path_to_input_file: str, path_to_output_file: str, footer) -> str:
-    template_file_location: str = os.path.join(path_to_input_file,"templates","template_main.html")
-    with open(template_file_location,"r") as template_file:
-        template_string: str = template_file.read()
-        template_string = (
-            template_string
-            .replace("{{placeholder_footer}}",footer)
-            )
-    with open(os.path.join(path_to_output_file,"custom_main.html"),"w") as custom_file:
-        custom_file.write(template_string)
-    return template_string
 
 def moveToOutputFolders(copy_folder: str, paste_folder: str, file_type: str) -> None:
     for files_to_copy in os.listdir(os.path.join(copy_folder,file_type)):

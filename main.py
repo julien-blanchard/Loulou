@@ -13,6 +13,7 @@ import mistune
 # local modules 
 from src.setup_site import *
 from src.create_json import *
+from src.create_main import createMainTemplate, createJavaScript
 from src.create_about import createAbout
 from src.create_extras import createExtras
 from src.create_home import createHome
@@ -20,9 +21,8 @@ from src.create_postspage import createPostsPage
 from src.create_individualposts import createIndividualPosts
 
 # Constants
-URL: str = "https://blanchardjulien.com"
 CONFIG_FILE: str = "config.json"
-NOW: str = datetime.now().strftime("%Y%m%d")
+JS_FILE: str = "javascript/script.js"
 ROOT_DIR: str = os.getcwd()
 OUTPUT_DIR: str = os.path.join(ROOT_DIR,"build")
 DATA_DIR: str = os.path.join(ROOT_DIR,"data")
@@ -45,17 +45,12 @@ json_file: str = os.path.join(DATA_DIR,"posts.json")
 def setupSite() -> None:
     createFolders(
         OUTPUT_DIR,
-        DATA_DIR,
-        NOW
+        DATA_DIR
     )
     clearOutputFolder(OUTPUT_DIR)
     createOutputFolders(
         OUTPUT_DIR,
         OUTPUT_FOLDERS
-    )
-    createMainTemplate(
-        ROOT_DIR,DATA_DIR,
-        f'{config_file["main"]["author"]} {NOW[:4]}'
     )
     moveToOutputFolders(
         ROOT_DIR,
@@ -80,7 +75,17 @@ def createJSON() -> None:
         DATA_DIR
     )
 
-def createNavigation() -> None:
+def createPages() -> None:
+    createJavaScript(
+        JS_FILE,
+        OUTPUT_DIR,
+        config_file
+    )
+    createMainTemplate(
+        ROOT_DIR,
+        DATA_DIR,
+        config_file
+    )
     createAbout(
         DATA_DIR,
         TEMPLATES_DIR,
@@ -94,7 +99,7 @@ def createNavigation() -> None:
     createHome(
         json_file,
         7,
-        URL,
+        config_file["main"]["url"],
         DATA_DIR,
         TEMPLATES_DIR,
         OUTPUT_DIR
@@ -102,7 +107,7 @@ def createNavigation() -> None:
     createPostsPage(
         json_file,
         7,
-        URL,
+        config_file["main"]["url"],
         DATA_DIR,
         TEMPLATES_DIR,
         OUTPUT_DIR
@@ -114,13 +119,14 @@ def createContent() -> None:
         DATA_DIR,
         TEMPLATES_DIR,
         POSTS_DIR,
-        OUTPUT_DIR
+        OUTPUT_DIR,
+        config_file
     )
 
 if __name__ == "__main__":
     setupSite()
     createJSON()
-    createNavigation()
+    createPages()
 
     createContent()
 

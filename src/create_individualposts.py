@@ -3,7 +3,7 @@ import os
 from typing import List, Dict, Any
 import mistune
     
-def createPost(post_path: str, templates: List[str], output_dir: str, attributes: List[str]) -> None:
+def createPost(post_path: str, templates: List[str], output_dir: str, attributes: List[str], config_file: Dict) -> None:
     with open(post_path,"r") as temp_file:
         temp_post: str = temp_file.read()
     
@@ -12,7 +12,7 @@ def createPost(post_path: str, templates: List[str], output_dir: str, attributes
         mistune
         .html(post_no_header)
         .replace('<a href=','<a class="has-text-danger" href=')
-        .replace('<img src="','<img class="images-centre" src="https://blanchardjulien.com')
+        .replace('<img src="',f'<img class="images-centre" src="{config_file["main"]["url"]}')
         .replace("<yt>",'<iframe width="90%" height="430" src="https://www.youtube.com/embed/')
         .replace("</yt>",'" frameborder="0" allowfullscreen></iframe>')
     )
@@ -32,7 +32,7 @@ def createPost(post_path: str, templates: List[str], output_dir: str, attributes
     with open(path_to_post,"w") as temp_file:
         temp_file.write(full_post)
 
-def createIndividualPosts(json_path: str, html_template: str,template_folder: str, posts_folder: str, output_dir: str) -> None:
+def createIndividualPosts(json_path: str, html_template: str,template_folder: str, posts_folder: str, output_dir: str, config_file: Dict) -> None:
     with open(os.path.join(html_template,"custom_main.html"), "r") as template_file:
         main_html: str = template_file.read()
     with open(os.path.join(template_folder,"template_individual_post.html"), "r") as template_file:
@@ -55,4 +55,4 @@ def createIndividualPosts(json_path: str, html_template: str,template_folder: st
             post_readtime
         ]
         path_to_post: str = os.path.join(posts_folder,posts)
-        createPost(path_to_post,html_templates,output_dir,post_attributes)
+        createPost(path_to_post,html_templates,output_dir,post_attributes,config_file)
